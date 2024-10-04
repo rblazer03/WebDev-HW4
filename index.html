@@ -1,3 +1,9 @@
+<!--
+Name: Rebekah Blazer
+Class: Web Dev
+Assignment: Homework 4 - Spooky season Flexbox Layout
+Last Updated: 03 October 2024
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +13,16 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google font added -->
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
 
     <style>
+        body{
+            background-color: grey;
+            width: 100%;
+            height: 100%;
+            padding-left: 0px;
+        }
         header{
             background-color: black;
             color: brown;
@@ -18,23 +31,18 @@
             padding-bottom: 2px;
             margin-bottom: 10px;
             text-shadow: 3px 2px gray;
-            
             font-family: "Rubik Wet Paint", system-ui;
             font-weight: lighter;
             font-size: large;
         }
-        body{
-            background-color: grey;
-            width: 100%;
-            height: 100%;
-            padding-left: 0px;
-        }
+        /* flexbox layout to display images in a row */
         #bucket{
             display: flex;
             justify-content: space-evenly;
             align-content: space-evenly;
             flex-wrap: wrap;
         }
+        /* properties of <div> containing each candy img and name */
         div[id^="candy"]{
             border: 4px solid brown;
             background-color: black;
@@ -57,6 +65,7 @@
             font-size: large;
             text-shadow: 3px 2px gray;
         }
+        /* candy images */
         img{
             border-radius: 15%;
             width: 90%;
@@ -66,6 +75,14 @@
             margin-right: auto;
             margin-top: 10px;
         }
+        /* ghost img in footer */
+        #boo{
+            height: 200px;
+            margin-top: 0;
+            object-fit: contain;
+            animation: glide 6s ease;
+        }
+        /* hover effect for <div> containing each candy img and name */
         div[id^="candy"]:hover {
             transform: scale(1.1) ;
             cursor: pointer;
@@ -73,17 +90,13 @@
             color: white;
             animation: bounce 0.5s linear infinite;
         }
+        /* candies bounce when they are hovered over */
         @keyframes bounce{
             0% {transform: translate(0px);}
             50% {transform: translate(0px, -10px);}
             100% {transform: translate(0px);}
         }
-        #boo{
-            height: 200px;
-            margin-top: 0;
-            object-fit: contain;
-            animation: glide 6s ease;
-        }
+        /* glide ghost image into the middle of the screen */
         @keyframes glide {
             0%   { transform: translate(-800px); } 
             50%  { transform: translate(800px); }
@@ -95,9 +108,11 @@
 
 <body>
     <header id="heading">
+        <!-- Heading with spider emojis -->
         <h1>&#128375; Trick - or - Treat &#128375;</h1>
     </header>
 
+    <!-- "Candy Bucket:" containes 6 <div> boxes, each connected with a differnt candy -->
     <main id="bucket">
         <div id = candy_1>
             <img src="candy-photos/candy-corn.jpg" alt="Candy Corn">
@@ -126,6 +141,7 @@
 
     </main>
 
+    <!-- Bonus Challenges -->
     <footer id="message">
         <h2>Happy Halloween!</h2>
         <img id="boo" src="candy-photos/boo.jpg" alt="Boo!">
